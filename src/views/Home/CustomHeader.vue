@@ -14,6 +14,7 @@
             Crie uma conta
           </button>
           <button
+            @click="() => emit('login')"
             class="px-6 py-2 font-bold bg-white rounded-full text-brand-main focus:outline-none">
             Entrar
           </button>
@@ -41,7 +42,9 @@
 
 <script>
 export default {
-
+  setup (_, { emit }) {
+    return { emit }
+  }
 }
 </script>
 
@@ -55,7 +58,7 @@ export default {
     @apply flex flex-col w-4/5 max-w-6xl;
   }
 
-  @media (min-width: 1170px) {
+  @media (min-width: 1175px) {
     .header-group {
       background-image: url(../../assets/images/balloons.png);
       background-size: 622px;
