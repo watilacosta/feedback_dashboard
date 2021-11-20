@@ -1,6 +1,6 @@
 <template>
   <custom-header
-    @create-account="handleAccountCreate"
+    @create-account="handleCreateAccount"
     @login="handleLogin"
   />
 
@@ -40,11 +40,13 @@ export default {
       })
     }
 
-    function handleAccountCreate () {
-      console.log('unimplemented function handleAccountCreate')
+    function handleCreateAccount () {
+      modal.open({
+        component: 'ModalCreateAccount'
+      })
     }
 
-    return { handleLogin, handleAccountCreate }
+    return { handleLogin, handleCreateAccount }
   }
 }
 </script>
